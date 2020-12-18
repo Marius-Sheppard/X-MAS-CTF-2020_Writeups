@@ -1,5 +1,5 @@
 # SANTA'S CONSOLATION
-:star: I don't know if this is the only solution or the simplest one but I tried to explain it the best I could so that beginners like me would understand  
+:star: I don't know if this is the only solution or the simplest one but I tried to explain it the best I could so that beginners like me would easily understand. 
   
 ### As we check the X-MAS CTF Web Exploitation section we find the following challenge:  
 ![Given Challenge](https://github.com/Marius-Sheppard/X-MAX_CTF_Writeups/blob/main/Santa's%20Consolation/xmasctftask.png)  
@@ -32,7 +32,7 @@ function bobify(s)
 
 
 const s1=s.replace(/4/g, 'a').replace(/3/g, 'e').replace(/1/g, 'i').replace(/7/g, 't').replace(/_/g, 'z').split('').join('[]'); 
-//This replaces every '4' with an 'a', every 'e' with an 'e' and so on.
+//This replaces every '4' with an 'a', every '3' with an 'e' and so on.
 
 
 const s2=encodeURI(s1).split('').map(c=>c.charCodeAt(0)).join('|');  
@@ -49,8 +49,8 @@ function win(x)
 ``` 
   
 We know that the given string got modified through the same code, so we attempt to reverse the steps and get our flag:  
-Use [this online tool](http://icyberchef.com/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)Reverse('Character')From_Base64('A-Za-z0-9%2B/%3D',true)&input=TWtWVVRUaG9hazQ0VGxST09HUjZUVGhhYWs0NFRsUk9PR1I2VFRoV1JFMTRkMGhQTW5jelRURjNNMDU2ZDI1T01uY3pUVEYzTTA1NmQxaFBOWGRJVHpKM00wMHhkek5PZW5kdVRqSjNNMDB4ZHpOT2VuZFlUbmRGUkdZMFdVUm1lbFZFWmpOTlJHWXlXVVJtZWxWRVpqTk5SR1l3UlZSTk9HaHFUamhPVkU0NFpIcE5PRnBxVGpoT1ZFNDRaSHBOT0VaRVRYaDNTRTh5ZHpOTk1YY3pUbnAzYms0eWR6Tk5NWGN6VG5wM2JrMTNSVVJtTkZsRVpucFZSR1l6VFVSbU1sbEVabnBWUkdZelRVUm1lVWxVVFRob2FrNDRUbFJPT0dSNlRUaGFhazQ0VGxST09HUjZUVGhDVkUxNGQwaFBNbmN6VFRGM00wNTZkMjVPTW5jelRURjNNMDU2ZHpOT2VFVkVaalJaUkdaNlZVUm1NMDFFWmpKWlJHWjZWVVJtTTAxRVpqRkJWRTA0YUdwT09FNVVUamhrZWswNFdtcE9PRTVVVGpoa2VrMDRiRlJQT0docVRqaE9WRTQ0WkhwTk9GcHFUamhPVkU0NFpIcE5PR1JVVHpob2FrNDRUbFJPT0dSNlRUaGFhazQ0VGxST09HUjZUVGhTVkUxNGQwaFBNbmN6VFRGM00wNTZkMjVPTW5jelRURjNNMDU2ZDFoUE5YZElUekozTTAweGR6Tk9lbmR1VGpKM00wMHhkek5PZW5kdVRYbEZSR1kwV1VSbWVsVkVaak5OUkdZeVdVUm1lbFZFWmpOTlJHWXpSVlJOT0docVRqaE9WRTQ0WkhwTk9GcHFUamhPVkU0NFpIcE5PR2hFVGpob2FrNDRUbFJPT0dSNlRUaGFhazQ0VGxST09HUjZUVGhHYWsxNGQwaFBNbmN6VFRGM00wNTZkMjVPTW5jelRURjNNMDU2ZDI1TmVVVkVaalJaUkdaNlZVUm1NMDFFWmpKWlJHWjZWVVJtTTAxRVpqRkZWRTA0YUdwT09FNVVUamhrZWswNFdtcE9PRTVVVGpoa2VrMDRSa1JOZUhkSVR6SjNNMDB4ZHpOT2VuZHVUakozTTAweGR6Tk9lbmRJVG5kRlJHWTBXVVJtZWxWRVpqTk5SR1l5V1VSbWVsVkVaak5OUkdZeFJWUk5PR2hxVGpoT1ZFNDRaSHBOT0ZwcVRqaE9WRTQ0WkhwTk9GWkVUWGgzU0U4eWR6Tk5NWGN6VG5wM2JrNHlkek5OTVhjelRucDNXRTk0UlVSbU5GbEVabnBWUkdZelRVUm1NbGxFWm5wVlJHWXpUVVJtZVVsVVRUaG9hazQ0VGxST09HUjZUVGhhYWs0NFRsUk9PR1I2VFRoa1ZFODRhR3BPT0U1VVRqaGtlazA0V21wT09FNVVUamhrZWswNFdsUk5lSGRJVHpKM00wMHhkek5PZW5kdVRqSjNNMDB4ZHpOT2VuZElUWGhGUkdZMFdVUm1lbFZFWmpOTlJHWXlXVVJtZWxWRVpqTk5SR1l6YTBSbU5GbEVabnBWUkdZelRVUm1NbGxFWm5wVlJHWXpUVVJtTVVWVVRUQXdNREJFUlZSRFFVUkZVZz09) to decode/encode.
-After decoding the string and reversing it we decode it again from base 64, ignoring this part 'D@À\t1ÓM4', exactly how the code shows at the creation of the s3
+Use [this online tool](http://icyberchef.com/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true)Reverse('Character')From_Base64('A-Za-z0-9%2B/%3D',true)&input=TWtWVVRUaG9hazQ0VGxST09HUjZUVGhhYWs0NFRsUk9PR1I2VFRoV1JFMTRkMGhQTW5jelRURjNNMDU2ZDI1T01uY3pUVEYzTTA1NmQxaFBOWGRJVHpKM00wMHhkek5PZW5kdVRqSjNNMDB4ZHpOT2VuZFlUbmRGUkdZMFdVUm1lbFZFWmpOTlJHWXlXVVJtZWxWRVpqTk5SR1l3UlZSTk9HaHFUamhPVkU0NFpIcE5PRnBxVGpoT1ZFNDRaSHBOT0VaRVRYaDNTRTh5ZHpOTk1YY3pUbnAzYms0eWR6Tk5NWGN6VG5wM2JrMTNSVVJtTkZsRVpucFZSR1l6VFVSbU1sbEVabnBWUkdZelRVUm1lVWxVVFRob2FrNDRUbFJPT0dSNlRUaGFhazQ0VGxST09HUjZUVGhDVkUxNGQwaFBNbmN6VFRGM00wNTZkMjVPTW5jelRURjNNMDU2ZHpOT2VFVkVaalJaUkdaNlZVUm1NMDFFWmpKWlJHWjZWVVJtTTAxRVpqRkJWRTA0YUdwT09FNVVUamhrZWswNFdtcE9PRTVVVGpoa2VrMDRiRlJQT0docVRqaE9WRTQ0WkhwTk9GcHFUamhPVkU0NFpIcE5PR1JVVHpob2FrNDRUbFJPT0dSNlRUaGFhazQ0VGxST09HUjZUVGhTVkUxNGQwaFBNbmN6VFRGM00wNTZkMjVPTW5jelRURjNNMDU2ZDFoUE5YZElUekozTTAweGR6Tk9lbmR1VGpKM00wMHhkek5PZW5kdVRYbEZSR1kwV1VSbWVsVkVaak5OUkdZeVdVUm1lbFZFWmpOTlJHWXpSVlJOT0docVRqaE9WRTQ0WkhwTk9GcHFUamhPVkU0NFpIcE5PR2hFVGpob2FrNDRUbFJPT0dSNlRUaGFhazQ0VGxST09HUjZUVGhHYWsxNGQwaFBNbmN6VFRGM00wNTZkMjVPTW5jelRURjNNMDU2ZDI1TmVVVkVaalJaUkdaNlZVUm1NMDFFWmpKWlJHWjZWVVJtTTAxRVpqRkZWRTA0YUdwT09FNVVUamhrZWswNFdtcE9PRTVVVGpoa2VrMDRSa1JOZUhkSVR6SjNNMDB4ZHpOT2VuZHVUakozTTAweGR6Tk9lbmRJVG5kRlJHWTBXVVJtZWxWRVpqTk5SR1l5V1VSbWVsVkVaak5OUkdZeFJWUk5PR2hxVGpoT1ZFNDRaSHBOT0ZwcVRqaE9WRTQ0WkhwTk9GWkVUWGgzU0U4eWR6Tk5NWGN6VG5wM2JrNHlkek5OTVhjelRucDNXRTk0UlVSbU5GbEVabnBWUkdZelRVUm1NbGxFWm5wVlJHWXpUVVJtZVVsVVRUaG9hazQ0VGxST09HUjZUVGhhYWs0NFRsUk9PR1I2VFRoa1ZFODRhR3BPT0U1VVRqaGtlazA0V21wT09FNVVUamhrZWswNFdsUk5lSGRJVHpKM00wMHhkek5PZW5kdVRqSjNNMDB4ZHpOT2VuZElUWGhGUkdZMFdVUm1lbFZFWmpOTlJHWXlXVVJtZWxWRVpqTk5SR1l6YTBSbU5GbEVabnBWUkdZelRVUm1NbGxFWm5wVlJHWXpUVVJtTVVWVVRUQXdNREJFUlZSRFFVUkZVZz09) to decode/encode with base-64.
+After decoding the string and reversing it, we decode it again from base 64, ignoring this part 'D@À\t1ÓM4', exactly how the code shows at the creation of the s3
 variable, resulting a sequence of character codes separated by '|' : 
 ```js
 var uri = '115|37|53|66|37|53|68|97|37|53|66|37|53|68|110|37|53|66|37|53|68|116|37|53|66|37|53|68|97|37|53|66|37|53|68|122|37|53|66|37|53|68|119|37|53|66|37|53|68|105|37|53|66|37|53|68|115|37|53|66|37|53|68|104|37|53|66|37|53|68|101|37|53|66|37|53|68|115|37|53|66|37|53|68|122|37|53|66|37|53|68|121|37|53|66|37|53|68|48|37|53|66|37|53|68|117|37|53|66|37|53|68|122|37|53|66|37|53|68|99|37|53|66|37|53|68|114|37|53|66|37|53|68|97|37|53|66|37|53|68|99|37|53|66|37|53|68|105|37|53|66|37|53|68|117|37|53|66|37|53|68|110|37|53|66|37|53|68|122|37|53|66|37|53|68|102|37|53|66|37|53|68|101|37|53|66|37|53|68|114|37|53|66|37|53|68|105|37|53|66|37|53|68|99|37|53|66|37|53|68|105|37|53|66|37|53|68|116'
@@ -63,15 +63,15 @@ After that's done we're left with decoding the URI, using the decodeURI method, 
 ```js
 var flag=decodeURI(encoded).split('[]').join('');
 ```
-The final step to recreating the flag is to replace the specified numbers with letters thus reversing the step where variable s1 was created 
+The final step to recreate the flag is to replace the specified numbers with letters thus reversing the step where variable s1 was created 
 in the original code (use of regex for replacing all apparitions of the character, not just the first one, in the string):
 ```js
 flag=flag.replace(/a/g,'4').replace(/e/g,'3').replace(/i/g, '1').replace(/t/g, '7').replace(/z/g, '_');
 ```
   
-  
-  
     
+    
+  
 Use the full code below to generate the flag:
 ```js
 var uri = '115|37|53|66|37|53|68|97|37|53|66|37|53|68|110|37|53|66|37|53|68|116|37|53|66|37|53|68|97|37|53|66|37|53|68|122|37|53|66|37|53|68|119|37|53|66|37|53|68|105|37|53|66|37|53|68|115|37|53|66|37|53|68|104|37|53|66|37|53|68|101|37|53|66|37|53|68|115|37|53|66|37|53|68|122|37|53|66|37|53|68|121|37|53|66|37|53|68|48|37|53|66|37|53|68|117|37|53|66|37|53|68|122|37|53|66|37|53|68|99|37|53|66|37|53|68|114|37|53|66|37|53|68|97|37|53|66|37|53|68|99|37|53|66|37|53|68|105|37|53|66|37|53|68|117|37|53|66|37|53|68|110|37|53|66|37|53|68|122|37|53|66|37|53|68|102|37|53|66|37|53|68|101|37|53|66|37|53|68|114|37|53|66|37|53|68|105|37|53|66|37|53|68|99|37|53|66|37|53|68|105|37|53|66|37|53|68|116'
