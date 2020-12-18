@@ -37,7 +37,7 @@ challs.xmas.htsp.ro:3000/?param1=value&param2=value
 To respect the conditions, some possible values can be: 
 ```
 param1=1E2&param2=100  (1E2= 10^2 = 100; they have the same length:3 characters, and are equal but not identical)
-param1=+1&param2=01  (+1 == 1)
+param1=+1&param2=01    (+1 == 1)
 param1=.10&param2=0.1  (0.10 == 0.1)
 ```
 
