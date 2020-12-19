@@ -1,4 +1,6 @@
 # PHP MASTER  
+:star: I don't know if this is the only solution or the simplest one but I tried to explain it the best I could so that beginners like me would easily understand. 
+
 ### As we check the X-MAS CTF Web Exploitation section we find the following challenge:  
 ![Given Challenge](https://github.com/Marius-Sheppard/X-MAS-CTF-2020_Writeups/blob/main/PHP%20Master/xmasctftask.png)  
 ### When navigating to the specified url we find the following code:
