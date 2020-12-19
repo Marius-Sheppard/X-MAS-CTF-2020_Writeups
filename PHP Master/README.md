@@ -20,6 +20,7 @@ if(strpos($p1, 'e') === false && strpos($p2, 'e') === false  && strlen($p1) === 
 //If this statement is true, it will exit showing us the flag. I will break it down below.
 {die($flag);}
 ?>
+
 ```  
   
  If we want to get the flag all the conditions below must be true:
